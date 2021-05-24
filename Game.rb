@@ -39,7 +39,7 @@ class Game
         puts "Final Score!!"
         puts "P1: #{player1.life}/3 vs P2: #{player2.life}/3"
         puts "------ GAME OVER ------"
-        `say 'Game over! Good Luck next time Player One'`
+        `say 'Game over! Player Two Wins!'`
         puts ""
         @game_on = false
       elsif player2.life == 0
@@ -47,7 +47,7 @@ class Game
         puts "Final Score!!"
         puts "P1: #{player1.life}/3 vs P2: #{player2.life}/3"
         puts "------ GAME OVER ------"
-        `say 'Game over! Good Luck next time Player Two'`
+        `say 'Game over! Player One Wins!'`
         puts ""
         @game_on = false
       else
