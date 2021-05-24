@@ -16,7 +16,7 @@ class Game
     while @game_on
       # Generate question, ask question to current player
       question = Question.new
-      puts "Player #{@current_player.number}:", question.gen_q
+      print "Player #{@current_player.number}: ", question.gen_q, "\n"
 
       # Get answer from user, check it for correctness, subtract life appropritately
       print "> "
