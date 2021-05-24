@@ -1,2 +1,2 @@
 # TwO-O
-Simple addition problem game with 2 players
+Simple addition problem game between 2 players
