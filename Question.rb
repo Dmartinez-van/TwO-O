@@ -10,18 +10,18 @@ class Question
     puts "What is #{@num1} plus #{@num2}?"
   end
 
-  def check_question
-    player_answer = gets.chomp.to_i
-    player_answer == (@num1 + @num2) ? "Yup" : "Nope"
-    if player_answer == (@num1 + @num2)
-      "Yup, good job!"
-      "P1: #{p1.life}/3 vs P2: #{p2.life}/3"
-    elsif
-      "Nope, you lose a life!"
-      game.current_player -= 1
-      "P1: #{p1.life}/3 vs P2: #{p2.life}/3"
-    end
-  end
+  # NOT GETTING/PUTTING FROM USER TO CLASSES
+  # def check_question
+  #   player_answer = gets.chomp.to_i
+  #   # if player_answer == (@num1 + @num2)
+    #   puts "Yup, good job!"
+    #   puts "P1: #{p1.life}/3 vs P2: #{p2.life}/3"
+    # elsif
+    #   puts "Nope, you lose a life!"
+    #   game.current_player -= 1
+    #   puts "P1: #{p1.life}/3 vs P2: #{p2.life}/3"
+    # end
+  # end
 
  
 
