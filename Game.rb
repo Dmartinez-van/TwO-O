@@ -23,9 +23,11 @@ class Game
       answer = gets.chomp.to_i
       if question.check_q answer
         puts "Correct! Good job!"
+        pid = spawn('afplay', './Right.aiff')
         puts ""
       else
         puts "Nope, you lose a life!"
+        pid = spawn('afplay', './Wrong.aiff')
         puts "Current answer was: #{question.num1 + question.num2}"
         puts ""
         @current_player.life -= 1
@@ -37,6 +39,7 @@ class Game
         puts "Final Score!!"
         puts "P1: #{player1.life}/3 vs P2: #{player2.life}/3"
         puts "------ GAME OVER ------"
+        `say 'Game over! Good Luck next time Player One'`
         puts ""
         @game_on = false
       elsif player2.life == 0
@@ -44,6 +47,7 @@ class Game
         puts "Final Score!!"
         puts "P1: #{player1.life}/3 vs P2: #{player2.life}/3"
         puts "------ GAME OVER ------"
+        `say 'Game over! Good Luck next time Player Two'`
         puts ""
         @game_on = false
       else
