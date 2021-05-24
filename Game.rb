@@ -14,8 +14,11 @@ class Game
 
   def play_game
     while @game_on
+      # Generate question, ask question to current player
       question = Question.new
       puts "Player #{@current_player.number}:", question.gen_q
+
+      # Get answer from user, check it for correctness, subtract life appropritately
       answer = gets.chomp.to_i
       if question.check_q answer
         puts "Correct! Good job!"
@@ -42,6 +45,7 @@ class Game
         puts ""
       end
 
+      # Swap current player, begin new loop
       change_player
     end
   end
