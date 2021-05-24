@@ -34,20 +34,12 @@ class Game
       end
 
       # check for game over condition
-      if player1.life == 0
-        puts "Player 1 loses!"
+      if @current_player.life == 0
+        puts "Player #{@current_player.number} loses!"
         puts "Final Score!!"
         puts "P1: #{player1.life}/3 vs P2: #{player2.life}/3"
         puts "------ GAME OVER ------"
-        `say 'Game over! Player Two Wins!'`
-        puts ""
-        @game_on = false
-      elsif player2.life == 0
-        puts "Player 2 loses!"
-        puts "Final Score!!"
-        puts "P1: #{player1.life}/3 vs P2: #{player2.life}/3"
-        puts "------ GAME OVER ------"
-        `say 'Game over! Player One Wins!'`
+        `say 'Game over! Player #{@current_player.number == 1 ? 2 : 1} Wins!'`
         puts ""
         @game_on = false
       else
