@@ -1,5 +1,5 @@
 class Game
-  attr_accessor :current_player, :game_on, :player1, :player2
+  attr_accessor :player1, :player2
 
   def initialize
     @player1 = Player.new(1)
@@ -19,11 +19,15 @@ class Game
       puts "Player #{@current_player.number}:", question.gen_q
 
       # Get answer from user, check it for correctness, subtract life appropritately
+      print "> "
       answer = gets.chomp.to_i
       if question.check_q answer
         puts "Correct! Good job!"
+        puts ""
       else
         puts "Nope, you lose a life!"
+        puts "Current answer was: #{question.num1 + question.num2}"
+        puts ""
         @current_player.life -= 1
       end
 
